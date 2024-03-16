@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical Exam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <div class="form-option">
+            <h2 class="margin-kineme">Information Form: </h2>
+            <label for="fullname">Full Name: </label>
+            <input name="fullname" type="text" required placeholder="First Name Last Name" class="margin-kineme">
+            <label for="email">Email Address: </label>
+            <input type="email" name="email" placeholder="EMAIL ADDRESS" required class="margin-kineme">
+            <label>Select Tour Package: </label>
+            <select name="tour" required>
+                <option value=""></option>
+                <option value="palawan">Palawan</option>
+                <option value="baguio">Baguio</option>
+                <option value="nueva ecija">Nueva Ecija</option>
+                <option value="ilo-ilo">Ilo-Ilo</option>
+                <option value="davao">Davao</option>
+            </select>
+            <label for="date">Arrival Date: </label>
+            <input type="date" required name="date" class="margin-kineme">
+            <label for="person">Number of Persons: </label>
+            <input type="number" name="person" required placeholder="Number" class="margin-kineme">
+            <h2 class="margin-kineme">What would you want to avail?</h2>
+            <div class="choices multiples margin-kineme">
+                <label for="board">Boarding </label>
+                <input type="checkbox" name="board" class="choice1">
+                <label for="food">Fooding </label>
+                <input type="checkbox" name="food" class="choice1">
+                <label for="sight">Sight Seeing </label>
+                <input type="checkbox" name="sight" class="choice1">
+            </div>
+            <label for="discount">Discount Coupon Code: </label>
+            <input name="discount" type="text" placeholder="Coupon" class="margin-kineme">
+            <h2>Terms and Condition: </h2>
+            <div class="choice multiples margin-kineme"> 
+                <label for="agree">I agree</label>
+                <input type="radio" name="agree" id="agree" required class="terms">
+                <label for="disagree">I disagree</label>
+                <input type="radio" name="disagree" id="disagree" checked class="terms">
+            </div>
+            <button>Complete Reservation</button>
+        </div>
+    </form>
+    <script>
+        var agree = document.getElementById("agree");
+        var disagree = document.getElementById("disagree");
+
+        agree.addEventListener("input", function() {
+            disagree.checked = false;
+        })  
+
+        disagree.addEventListener("input", function() {
+            agree.checked = false;
+        })  
+    </script>
+</body>
+</html>
